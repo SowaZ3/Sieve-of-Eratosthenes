@@ -11,7 +11,7 @@ int main()
     int low_range, high_range;
     bool trigger = true;    // allows 2 in primes vector
 
-    std::cout << "Enter a low and high range (an integers, scope 2 to 99999, separate them by space)\n";
+    std::cout << "Enter a low and high range (an integers, scope 2 to 99999, separate them with a space)\n";
 
     std::cin >> low_range >> high_range;
 
