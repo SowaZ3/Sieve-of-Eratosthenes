@@ -11,19 +11,17 @@ int main()
     int low_range, high_range;
     bool trigger = true;    // allows 2 in primes vector
 
-    std::cout << "Enter a low and high range (an integers)\n";
+    std::cout << "Enter a low and high range (an integers, scope 2 to 99999, separate them by space)\n";
 
     std::cin >> low_range >> high_range;
 
-    std::cout << "\n";
-
-    while(std::cin.fail())  // err catching
+    while(std::cin.fail() || low_range < 2 || high_range > 99999)  // err catching
     {
       std::cin.clear();
       std::cin.ignore();
-      std::cout << "Bad entry.  Enter an INTEGERS:\n";
+      std::cout << "Bad entry. Follow the above recommendations :)\n";
       std::cin >> low_range >> high_range;
-    }    
+    }
 
     for (int i = 2; i < high_range || trigger; i++)    // checks for divisibility by lower primes. 2 is first prime number
     {
@@ -36,6 +34,8 @@ int main()
         if (trigger) primes.push_back(i);   // Adds a new prime to vecotr
 
     }
+
+    std::cout << "\n";
 
     for (int i = 0; i < primes.size(); i++) // printer
     {
